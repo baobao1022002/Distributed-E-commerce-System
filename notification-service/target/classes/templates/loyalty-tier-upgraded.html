@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    body { margin:0; padding:0; background:#f4f4f4; font-family: Arial, sans-serif; }
+    .wrapper { max-width:600px; margin:30px auto; background:#ffffff; border-radius:8px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.08); }
+    .header { background:linear-gradient(135deg,#6a11cb,#2575fc); padding:28px 32px; }
+    .header h1 { margin:0; color:#ffffff; font-size:22px; }
+    .badge { display:inline-block; background:#f0ebff; color:#6a11cb; border-radius:20px; padding:6px 18px; font-size:13px; font-weight:600; margin-bottom:18px; }
+    .body { padding:32px; color:#333333; font-size:15px; line-height:1.7; }
+    .body p { margin:0 0 14px; }
+    .tier-box { background:linear-gradient(135deg,#f8f3ff,#eef3ff); border-radius:10px; padding:22px 28px; text-align:center; margin:18px 0; }
+    .tier-box .tier-name { font-size:28px; font-weight:700; color:#6a11cb; letter-spacing:2px; }
+    .tier-box .tier-label { font-size:12px; color:#888; margin-top:6px; text-transform:uppercase; letter-spacing:1px; }
+    .footer { background:#f9f9f9; padding:16px 32px; font-size:12px; color:#888888; text-align:center; border-top:1px solid #eeeeee; }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+  <div class="header">
+    <h1>🏆 Loyalty Tier Upgraded!</h1>
+  </div>
+  <div class="body">
+    <span class="badge">Tier Upgrade</span>
+    <p th:text="${message}">Congratulations on your tier upgrade!</p>
+    <p>You now enjoy exclusive benefits, higher point multipliers, and priority support. Thank you for your loyalty!</p>
+  </div>
+  <div class="footer">
+    <p>&copy; 2026 E-Commerce Platform. All rights reserved.</p>
+  </div>
+</div>
+</body>
+</html>
+

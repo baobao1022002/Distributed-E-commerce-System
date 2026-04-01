@@ -1,0 +1,165 @@
+Table users {
+  id varchar [pk]
+  customer_id varchar [unique]
+  email varchar [unique]
+  password varchar
+  created_at timestamp
+  updated_at timestamp
+}
+
+// Order Service DB
+Table orders {
+  id varchar [pk]
+  customer_id varchar
+  customer_email varchar
+  status varchar
+  total_amount decimal
+  discount_amount decimal
+  final_amount decimal
+  coupon_code varchar
+  correlation_id varchar
+  payment_id varchar
+  expires_at timestamp
+  created_at timestamp
+  is_deleted boolean
+  created_by varchar
+  created_date timestamp
+  last_modified_by varchar
+  last_modified_date last_modified_date
+}
+
+Table order_items {
+  id varchar [pk]
+  order_id varchar [ref: > orders.id]
+  product_id varchar
+  price int
+  quantity int
+  is_deleted boolean
+  created_by varchar
+  created_date timestamp
+  last_modified_by varchar
+  last_modified_date last_modified_date
+}
+
+// Product Service DB
+Table products {
+  id varchar [pk]
+  name varchar
+  price int
+  stock int
+  category_id varchar
+  is_deleted boolean
+  created_by varchar
+  created_date timestamp
+  last_modified_by varchar
+  last_modified_date last_modified_date
+}
+
+Table categories {
+  id varchar [pk]
+  name varchar
+  parent_id varchar
+  is_deleted boolean
+  created_by varchar
+  created_date timestamp
+  last_modified_by varchar
+  last_modified_date last_modified_date
+}
+
+// Promotion Service DB
+Table coupons {
+  id varchar [pk]
+  code varchar [unique]
+  description text
+  type varchar
+  discount_value decimal
+  minimum_order_value decimal
+  active boolean
+  start_date timestamp
+  end_date timestamp
+  is_deleted boolean
+  created_by varchar
+  created_date timestamp
+  last_modified_by varchar
+  last_modified_date last_modified_date
+}
+
+Table flash_sales {
+  id varchar [pk]
+  name varchar [unique]
+  description text
+  status varchar
+  product_ids json
+  discount_percentage decimal
+  total_stock int
+  remaining_stock int
+  sold_quantity int
+  start_time timestamp
+  end_time timestamp
+  premium_start_time timestamp
+  is_deleted boolean
+  created_by varchar
+  created_date timestamp
+  last_modified_by varchar
+  last_modified_date last_modified_date
+}
+
+// Loyalty Service DB
+Table loyalty_accounts {
+  id varchar [pk]
+  created_at timestamp
+  user_id varchar [unique]
+  user_email varchar
+  current_points bigint
+  lifetime_points bigint
+  lifetime_spend bigint
+  tier varchar
+  updated_at timestamp
+}
+
+Table point_transactions {
+  id varchar [pk]
+  created_at timestamp
+  user_id varchar
+  points bigint
+  type varchar
+  source varchar
+  order_id varchar
+  description text
+  expires_at timestamp
+}
+
+
+// Notification Service DB
+Table email_messages {
+  id varchar [pk]
+  user_id varchar
+  to_email varchar
+  subject varchar
+  content text
+  type varchar
+  status varchar
+  retry_count int
+  max_retries int
+  failure_reason text
+  sent_at timestamp
+}
+
+Ref: users.customer_id - orders.customer_id
+Ref: users.id - loyalty_accounts.user_id
+Ref: orders.id - point_transactions.order_id
+Ref: users.id - point_transactions.user_id
+Ref: users.id - email_messages.user_id
+Ref: products.id - order_items.product_id
+
+
+
+Ref: "categories"."id" < "products"."id"
+
+
+
+
+
+Ref: "categories"."name" < "categories"."is_deleted"
+
+Ref: "flash_sales"."id" < "products"."is_deleted"

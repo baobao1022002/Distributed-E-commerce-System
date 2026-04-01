@@ -1,0 +1,54 @@
+info:
+  name: getHistory
+  type: http
+  seq: 5
+  tags:
+    - loyalty-controller
+
+http:
+  method: GET
+  url: http://localhost:8185/api/loyalty/:userId/history
+  params:
+    - name: userId
+      value: ""
+      type: path
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: 200 Response
+    description: OK
+    request:
+      url: "{{baseUrl}}/api/loyalty/:userId/history"
+      method: GET
+      params:
+        - name: userId
+          value: ""
+          type: path
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: "*/*"
+      body:
+        type: text
+        data: |-
+          [
+            {
+              "id": "",
+              "userId": "",
+              "points": 0,
+              "type": "EARN",
+              "source": "ORDER_COMPLETION",
+              "orderId": "",
+              "description": "",
+              "createdAt": "",
+              "expiresAt": ""
+            }
+          ]

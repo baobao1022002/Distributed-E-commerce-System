@@ -1,0 +1,38 @@
+server:
+  port: 8086
+
+spring:
+  application:
+    name: auth-service
+  datasource:
+    url: "jdbc:mysql://localhost:3306/micro_practice_auth"
+    driverClassName: "com.mysql.cj.jdbc.Driver"
+    username: root
+    password: root125p
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:change-this-secret-key-to-at-least-32-bytes-long-12345}
+    expiration-seconds: ${JWT_EXPIRATION_SECONDS:3600}
+
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+keycloak:
+  auth-server-url: http://localhost:8080
+  realm: vti-dtn-2506-2
+  resource: backend
+  credentials:
+    secret: 'HCzF9rCAF2VyEjB8uyS6nlNNIPNvTAI9'
+logging:
+  level:
+    root: info
+    com.example.demo: debug

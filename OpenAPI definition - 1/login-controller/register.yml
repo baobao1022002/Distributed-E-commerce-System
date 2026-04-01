@@ -1,0 +1,27 @@
+info:
+  name: register
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: http://localhost:8086/api/auth/register
+  body:
+    type: json
+    data: |-
+      {
+         "username":"bao.nguyen2",
+         "email": "quocbao01651@gmail.com",
+         "password":"123456",
+         "firstName": "bao",
+         "lastName": "bao"
+      }
+  auth:
+    type: bearer
+    token: eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJNYlpSeHd3RmYwcnoxZFVXZHQtT3FTR3NyQy1LOHNkR0pySkVOMGRwQTNFIn0.eyJleHAiOjE3NzQ2NzI1NjQsImlhdCI6MTc3NDY3MjI2NCwianRpIjoiNjE4MDM1MjAtMmM4MS00YTI5LWJlZTYtM2U2YWU4ZmY1YWU0IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3JlYWxtcy92dGktZHRuLTI1MDYtMiIsImF1ZCI6WyJyZWFsbS1tYW5hZ2VtZW50IiwiYWNjb3VudCJdLCJzdWIiOiJiMDUwNmE2NC0xMGY4LTQzYzItOTRiYi0wZjVkZDU4ZDNhM2IiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJiYWNrZW5kIiwic2Vzc2lvbl9zdGF0ZSI6ImIyZDQwNDg1LTllZTMtNDI3MC1hMmVjLWNlZWIzNDdmMzQzZiIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiLyoiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtdnRpLWR0bi0yNTA2LTIiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsicmVhbG0tbWFuYWdlbWVudCI6eyJyb2xlcyI6WyJ2aWV3LXJlYWxtIiwidmlldy1pZGVudGl0eS1wcm92aWRlcnMiLCJtYW5hZ2UtaWRlbnRpdHktcHJvdmlkZXJzIiwiaW1wZXJzb25hdGlvbiIsInJlYWxtLWFkbWluIiwiY3JlYXRlLWNsaWVudCIsIm1hbmFnZS11c2VycyIsInF1ZXJ5LXJlYWxtcyIsInZpZXctYXV0aG9yaXphdGlvbiIsInF1ZXJ5LWNsaWVudHMiLCJxdWVyeS11c2VycyIsIm1hbmFnZS1ldmVudHMiLCJtYW5hZ2UtcmVhbG0iLCJ2aWV3LWV2ZW50cyIsInZpZXctdXNlcnMiLCJ2aWV3LWNsaWVudHMiLCJtYW5hZ2UtYXV0aG9yaXphdGlvbiIsIm1hbmFnZS1jbGllbnRzIiwicXVlcnktZ3JvdXBzIl19LCJiYWNrZW5kIjp7InJvbGVzIjpbIkFETUlOIl19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJzaWQiOiJiMmQ0MDQ4NS05ZWUzLTQyNzAtYTJlYy1jZWViMzQ3ZjM0M2YiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsIm5hbWUiOiJiYW8gYmFvIiwicHJlZmVycmVkX3VzZXJuYW1lIjoiYmFvLm5ndXllbiIsImdpdmVuX25hbWUiOiJiYW8iLCJmYW1pbHlfbmFtZSI6ImJhbyIsImVtYWlsIjoicXVvY2JhbzAxNjU0QGdtYWlsLmNvbSJ9.GwfFdBw_4SobPnw-Moi3ZUeJkzGjBqoBCyOuS-Af_HZ3DntmKl_Y19jnlWlf46Qvxrjrakrcjq-W5Pl4lIv3PqOy9wLb-IUda2p70uUN08nVaAdjcQqz58QRTB1lT8CH_0Qyk_bX_WR6yLpmt_Q4eYdOzRevGu-ZSn5Is3LfLcMGBsAv1flmUPrfd9M-TzkGPsY8PD1OO7rSncsgpJ-7A3oe8gFfoRkGYuslvajSXNbOfQt12MZBMZERLZQ_RGDkFX2Sm6oUMkwmT52WF2pThbDVg_8MHnmfNS3whsZoCC23q9hT9glHQ0a2n_qoE6p-Yr_iYa3qcL_UCdd2OzcVYg
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

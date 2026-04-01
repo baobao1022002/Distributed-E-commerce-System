@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    body { margin:0; padding:0; background:#f4f4f4; font-family: Arial, sans-serif; }
+    .wrapper { max-width:600px; margin:30px auto; background:#ffffff; border-radius:8px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.08); }
+    .header { background:#ea4335; padding:28px 32px; }
+    .header h1 { margin:0; color:#ffffff; font-size:22px; }
+    .badge { display:inline-block; background:#fce8e6; color:#c5221f; border-radius:20px; padding:6px 18px; font-size:13px; font-weight:600; margin-bottom:18px; }
+    .body { padding:32px; color:#333333; font-size:15px; line-height:1.7; }
+    .body p { margin:0 0 14px; }
+    .highlight { background:#fef7f6; border-left:4px solid #ea4335; padding:14px 18px; border-radius:4px; margin:18px 0; font-size:14px; }
+    .footer { background:#f9f9f9; padding:16px 32px; font-size:12px; color:#888888; text-align:center; border-top:1px solid #eeeeee; }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+  <div class="header">
+    <h1>Order Could Not Be Processed</h1>
+  </div>
+  <div class="body">
+    <span class="badge">Order Failed</span>
+    <p>Unfortunately, we were unable to complete your order.</p>
+    <div class="highlight">
+      <p th:text="${message}"></p>
+    </div>
+    <p>No charges have been made. Please try placing your order again or contact our support team if the issue persists.</p>
+  </div>
+  <div class="footer">
+    <p>&copy; 2026 E-Commerce Platform. All rights reserved.</p>
+  </div>
+</div>
+</body>
+</html>
+
